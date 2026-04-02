@@ -27,7 +27,10 @@ namespace ObserverStrategyTemplate.Models.Base
             LogResult();
         }
 
-        protected abstract string FormatMessage(string type, object data);
+        protected string FormatMessage(string type, object data)
+        {
+            return _formStrategy.Format($"[ALERT] {type}: {data}", DateTime.Now);
+        }
 
         protected abstract void SendMessage(string message);
 

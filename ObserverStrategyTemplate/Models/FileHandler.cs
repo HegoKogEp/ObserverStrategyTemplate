@@ -13,10 +13,6 @@ namespace ObserverStrategyTemplate.Models
         {
             _filePath = filePath;
         }
-        protected override string FormatMessage(string type, object data)
-        {
-            return _formStrategy.Format($"[ALERT] {type}: {data}", DateTime.Now);
-        }
 
         protected override void SendMessage(string message)
         {

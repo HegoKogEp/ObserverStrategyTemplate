@@ -10,10 +10,6 @@ namespace ObserverStrategyTemplate.Models
     {
         public ConsoleHandler(IFormatStrategy strategy) : base(strategy) { }
 
-        protected override string FormatMessage(string type, object data)
-        {
-            return _formStrategy.Format($"[ALERT] {type}: {data}", DateTime.Now);
-        }
 
         protected override void SendMessage(string message)
         {
